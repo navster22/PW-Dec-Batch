@@ -1,0 +1,46 @@
+/* External CSS */
+
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+ol {
+    color: blue;
+}
+h6 {
+    color: green;
+}
+h1 {
+    color: rgb(42, 2, 80);
+}
+.italic {
+    font-style: italic;
+}
+.type-red {
+    color: red;
+}
+.type-blue {
+    color: blue;
+}
+.italic, h6 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* span a {.  Descendent Selector
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+} */
+/* Child Selector */
+span > a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+/* Adjacent Selector */
+.type-blue + ul {
+    color: red;
+}
+/* General sibling */
+h6 ~ a {
+    background-color: yellow;
+}
