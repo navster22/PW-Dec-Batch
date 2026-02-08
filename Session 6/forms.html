@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <p>Hello</p>
+        <form action="#">
+            <label for="FirstName">First Name</label>
+            <br/>
+            <input 
+                type="text"
+                id="FirstName"
+                name="FirstName"
+                placeholder="Enter your first name"
+                required
+                autofocus
+            />
+            <input id="email" aria-describedby="email-error">
+            <span id="email-error" role="alert">
+                Invalid email format
+            </span>
+            <br/>
+            <label for="LastName">Aadhar no</label>
+            <br/>
+            <input 
+                type="text"
+                id="LastName"
+                name="LastName"
+                placeholder="Enter your last name"
+                value="32142141421332"
+                readonly
+            />
+            <br/>
+            <label>
+                <input type="checkbox" name="subject" value="dsa"/>
+                DSA
+            </label>
+            <label><input type="checkbox" name="subject" value="frontend"/> Frontend</label>
+            <label><input type="checkbox" name="subject" value="backend"/> Backend</label>
+            <br/>
+            <input type="radio" name="gender" value="male"/>Male
+            <input type="radio" name="gender" value="female"/>Female
+            <br/>
+            <select name="country">
+                <option value="">Select a country</option>
+                <option value="India">India</option>
+                <option value="UK">UK</option>
+                <option value="USA">USA</option>
+            </select>
+            <br/>
+            <textarea name="details" id="details" rows="5" cols="40"></textarea>
+            <br/>
+            <!-- <fieldset>
+                <legend>Personal Details</legend>
+                <label>Name</label>
+                <input type="text"/>
+                <label>Contact</label>
+                <input type="number"/>
+            </fieldset> -->
+            <input list="languages"/>
+            <datalist id="languages">
+                <option value="HTML"></option>
+                <option value="CSS"></option>
+            </datalist>
+            <input type="submit"/>
+            <!-- <button type="submit">Submit</button> -->
+        </form>
+        <p>Audio</p>
+        <audio controls muted>
+            <source src="./horse.mp3">
+        </audio>
+        <p>Video</p>
+        <video controls width="400" height="400" autoplay muted>
+            <source src="./movie.mp4">
+        </video>
+        <p>IFrame</p>
+        <iframe width="500" height="500" src="https://www.linkedin.com/in/navneetchauhandeveloper/">
+        </iframe>
+    </body>
+</html>

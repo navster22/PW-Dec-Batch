@@ -18,7 +18,7 @@ p {
     line-height: 1.7;
     letter-spacing: 2px;
     word-spacing: 50px;
-    text-decoration: underline;
+    text-decoration: none;
     text-transform: uppercase;
 }
 
