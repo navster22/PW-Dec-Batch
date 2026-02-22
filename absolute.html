@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Absolute position</title>
+        <style>
+            .main {
+                width: 100px;
+                height: 30px;
+                background-color: blue;
+                color: white;
+                border-radius: 20px;
+                position: relative;
+                padding: 2px;
+                text-align: center;
+                align-content: center;
+            }
+            .child {
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 50px;
+                position: absolute;
+                right: -5px;
+                top: -5px;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="main">
+        Messages
+        <div class="child">3</div>
+       </div>
+    </body>
+</html>
