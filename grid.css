@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 100px;
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-areas: 
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+    height: 100vh;
+    gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    background: lightblue;
+    color: black;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: pink;
+    color: black;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+    background: red;
+    color: white;
+}
