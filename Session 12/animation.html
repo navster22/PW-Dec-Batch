@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transforms, transitions and animations</title>
+        <style>
+            :root {
+                --main-color: yellow
+            }
+
+            .dark {
+                --main-color: black
+            }
+
+            body {
+                padding: 20px;
+                line-height: 10px;
+                background-image: url("./460-400x250.jpg");
+            }
+            .container {
+                perspective: 500px;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: var(--main-color);
+                font-size: 20px;
+                color: white;
+                text-align: center;
+                transform: rotateY(45deg);
+            }
+
+            .card {
+                width: 300px;
+                overflow: hidden;
+            }
+
+            .card img {
+                width: 100%;
+                transition: transform 0.4s ease-in; 
+            }
+
+            .card:hover img {
+                transform: scale(1.2) skew(3deg) skew(3deg) skew(3deg) skew(3deg) skew(3deg);
+            }
+
+            .btn{
+                padding: 10px 20px;
+                background: var(--main-color);
+                color: white;
+                border: none;
+                transition: all 0.3s ease;
+            }
+
+            .btn:hover {
+                background: red;
+                transform: scale(1.1);
+            }
+
+            .anibox {
+                width: 100px;
+                height: 100px;
+                background-color: violet;
+                animation: slide 2s 2 ease-in;
+            }
+
+            .ball {
+                height: 100px;
+                width: 100px;
+                background-color: var(--main-color);
+                border-radius: 50px;
+                animation: bounce 0.5s infinite;
+            }
+
+            @keyframes slide {
+                from{
+                    transform: translateX(0);
+                }
+                to{
+                    transform: translateX(100px);
+                }
+            }
+
+            @keyframes bounce {
+                0% { transform: translateY(0);}
+                50% { transform: translateY(-50px);}
+                100% { transform: translateY(0);}
+            }
+
+            .filter {
+                filter: grayscale(80%);
+            }
+
+            .glass-card {
+                width: 300px;
+                padding: 20px;
+                border-radius: 15px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+
+           
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                1
+            </div>
+        </div>
+
+        <!-- <div class="card">
+            <img src="https://picsum.photos/400/250" alt="image">
+        </div> -->
+
+        <button class="btn">Hover Me!</button>
+
+        <div class="anibox">
+        </div>
+
+        <div class="ball">
+        </div>
+<!-- 
+        <img src="./460-400x250.jpg" alt="random1">
+        <img class="filter" src="./460-400x250.jpg" alt="random1"> -->
+
+        <div class="glass-card">
+            <h2>Glass Card</h2>
+            <p>This is a glassmorphism effect</p>
+        </div>
+    </body>
+</html>
+<!-- 
+Transforms: It allows us to move, rotate, scale and skew HTML elements.
+Property values: translate, scale, rotate, skew
+
+Transition: It controls how elemnt will transform.
+Four properties of transition: transition-property , transition duration, transition-timing-function and transition-delay
+
+Animation: It is used to create a transformation in an HTML element without any trigger.
+Propertion of anumation: duration, iteration-count, delay and direction
+ -->
+
+<!-- 
+ CSS filters: They allow you to add visual effects to elements - like blur, brightness, cintrast etc.
+-->
+
+<!-- 
+ CSS variable: It is used to store values ad reuse them in your stylesheet
+-->
