@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web project</title>
+    </head>
+    <body>
+        <script>
+            var name = "Navneet"; // ES 5 
+            age = 12;
+            var a = 1;
+            var b = 2;
+            var x = true
+            console.log(x)
+
+            var num = 43;
+
+            if(num % 2 === 0){
+                console.log("This is even " + num)
+            } else {
+                console.log("This is odd " + num)
+            }
+
+            for(let i = 0; i < 5; i++){
+                console.log("Number is " + i)
+            }
+
+
+            var arr = [1, "Two", 'a', false];
+            arr[2] = 'three'
+            console.log(arr);
+            arr.push(5);
+            console.log(arr);
+            arr.pop()
+            console.log(arr);
+
+            arr.unshift(5);
+            console.log(arr);
+            arr.shift()
+            console.log(arr);
+
+            // This is function in js
+            function addition(a,b){
+                var sum = a + b;
+                return sum;
+            }
+
+            /*
+            Multiline
+            Comment
+            */
+
+            console.log(addition(9,5));
+
+            console.log(2+1+'1');
+
+            var u = null;
+
+            console.log(u)
+
+            var person = {};
+
+            var key = "age";
+
+            person.name = "Navneet"
+
+            person.age = 12
+            console.log(person[key])
+        
+            console.log(Object.values(person))
+
+            var a = [1,2,3];
+
+            var b = a;
+
+            b[0] = 'One';
+
+            console.log(a[0])
+
+            var a = {
+                name: "Nav"
+            }
+
+            var b = a;
+
+            a.name = null;
+
+            console.log(b)
+
+            let c = 100;
+
+
+            function zzz(){
+                let c = "Hi"
+                console.log(c)
+            }
+
+            console.log(c)
+            zzz()
+
+
+             const input =  [1, "two", 3, "four"] ;
+
+            // {
+            //     num: []
+            //     string: []
+            // }
+
+            function mapStrAndNumArrays(arr){
+                let strs = [];
+                let nums = [];
+                for(let i = 0; i < arr.length; i++){
+                    if(typeof(arr[i]) === 'number'){
+                        nums.push(arr[i]);
+                    } else {
+                        strs.push(arr[i]);
+                    }
+                }
+                return {
+                    num: nums,
+                    string: strs
+                }
+            }
+
+
+            console.log(mapStrAndNumArrays(input));
+
+        </script>
+    </body>
+</html>
