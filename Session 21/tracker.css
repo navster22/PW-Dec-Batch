@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a,#1e293b);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: #ffffff10;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 25px;
+    padding: 30px;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.header p {
+    opacity: .8;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    background: rgba(255, 255, 255, .08);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 14px;
+    opacity: .8;
+    margin-bottom: 8px;
+}
+
+.card span{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.progress-container {
+    height: 14px;
+    background: rgba(255, 255, 255, .01);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e,#3b82f6);
+    transition: 4s;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: white;
+    font-weight: bold;
+    transition: .25s;
+}
+
+#addBtn{
+    background: #3b82f6;
+}
+
+button:hover{
+    transform: translateY(-2px);
+}
+
+#taskList{
+    list-style: none;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 14px;
+    animation: pop .3s ease;
+}
+
+.task.completed{
+    text-decoration: line-through;
+    opacity: .6;
+}
+
+.done{
+    background: #22c55e;
+}
+
+.delete{
+    background: #ef4444;
+}
+
+
