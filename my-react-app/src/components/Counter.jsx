@@ -1,15 +1,13 @@
-import { useEffect, useRef, useState, useMemo } from "react"
+import { useEffect, useRef, useState, useMemo, useContext } from "react"
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Counter() {
     const [count, setCount] = useState(0);
     const [isDark, setIsDark] = useState(true);
-    const [output, setOutput] = useState();
+    const [output, setOutput] = useState(0);
+    const {theme, toggleTheme} = useContext(ThemeContext);
+
     
-
-    const buttonRef = useRef();
-    const inputRef = useRef();
-
-
 
     const onIncrease = () => {
         setCount(count+1);
@@ -19,51 +17,38 @@ export default function Counter() {
         setCount(count-1);
     }
 
-    const changeName = function() {
-        buttonRef.current.innerText = "green";
+
+    const doDouble = function(n){
+        console.log("Calculating...");
+        // Expensive
+        return n*2;
     }
 
-    const addData = () => {
-        for(let i = 0; i < 9000000000; i++){
-
-        }
-        setOutput(inputRef.current.value);
+    const random = function(){
+        console.log("Doing Nothing")
     }
 
-    useEffect(() => {
-        console.log("Hello");
-        return () => {
-            console.log("This is unmounted now")
-        }
-    }, []);
+    const outputMemo = useMemo(() => doDouble(output), [output])
 
-    const dark = {
-        backgroundColor: "black",
-        color: "white"
-    }
-
-    const light = {
-        backgroundColor: "white",
-        color: "black"
-    }
-
-    const double = useMemo(() => {
-        console.log("Calculating...")
-        return count * 2
-    },[count]);
+    // useMemo(() => doDouble(output), [Dependency array])
 
     return (
-        <div style={isDark ? dark : light}>
+        <div style={{backgroundColor: theme === 'light' ? 'beige' : "grey"}}>
             <h3>Counter: {count}</h3>
-            <h3>Double: {double}</h3>
-            <button ref={buttonRef} onClick={onIncrease}>Increase</button>
+            <h3>Double: {outputMemo}</h3>
+            <button onClick={onIncrease}>Increase</button>
             <button onClick={onDecrease}>Decrease</button>
-            <button onClick={changeName}>Change Name</button>
-            <button onClick={() => setIsDark(!isDark)}>Change Theme</button>
             <br></br>
-            <input ref={inputRef} type="text"></input>
-            <button onClick={addData}>Add</button>
-            <h3>Output: {output}</h3>
+            <input type="text" onChange={(e) => setOutput(parseInt(e.target.value) || 0)}></input>
+            <h3>Output: {outputMemo}</h3>
         </div>
     )
 }
+
+
+/* React hooks
+ useState
+
+ GP --> Parent --> Child [Props]
+
+ */
