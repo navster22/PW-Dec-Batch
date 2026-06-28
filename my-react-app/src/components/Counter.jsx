@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo, useContext } from "react"
+import { useEffect, useRef, useState, useMemo, useContext, useCallback } from "react"
 import { ThemeContext } from "../context/ThemeContext";
 
 export default function Counter() {
@@ -28,19 +28,20 @@ export default function Counter() {
         console.log("Doing Nothing")
     }
 
-    const outputMemo = useMemo(() => doDouble(output), [output])
+    const outputMemo = useCallback(() => doDouble(count), [doDouble, count])
 
-    // useMemo(() => doDouble(output), [Dependency array])
+    // useMemo(() => doDouble(output), [Dependency array]) --> Memoizes the value
+    // useCallback --> Memoizes the function/method
 
     return (
         <div style={{backgroundColor: theme === 'light' ? 'beige' : "grey"}}>
             <h3>Counter: {count}</h3>
-            <h3>Double: {outputMemo}</h3>
+            <h3>Double: {outputMemo()}</h3>
             <button onClick={onIncrease}>Increase</button>
             <button onClick={onDecrease}>Decrease</button>
             <br></br>
             <input type="text" onChange={(e) => setOutput(parseInt(e.target.value) || 0)}></input>
-            <h3>Output: {outputMemo}</h3>
+            {/* <h3>Output: {outputMemo}</h3> */}
         </div>
     )
 }
