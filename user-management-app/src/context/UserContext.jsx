@@ -8,18 +8,23 @@ export function UserProvider({children}){
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
 
-    useEffect(async () => {
-        await getUsers().then(setUsers);
+    useEffect(() => {
+        const loadUsers = async () => {
+            const data = await getUsers();
+            setUsers(data);
+        }
+        loadUsers();
     }, [])
 
     async function saveUser(updatedUser) {
-        await updateUser(updatedUser);
+        const savedUser = await updateUser(updatedUser);
         setUsers((prev) =>
             prev.map((user) => 
-            user.id === updatedUser.id ? updatedUser : user
+            user.id === savedUser.id ? {...user, ...savedUser }: user
             )
         );
         setSelectedUser(null);
+        return savedUser;
     }
 
     return (
@@ -33,5 +38,5 @@ export function UserProvider({children}){
     )
 }
 
-export const useUsers = () => useContext(UserProvider);
+export const useUsers = () => useContext(UserContext);
 
