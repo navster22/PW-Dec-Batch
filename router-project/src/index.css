@@ -17,3 +17,7 @@ a.active {
   color: red;
   font-weight: bold;
 }
+
+p {
+  color: black;
+}
